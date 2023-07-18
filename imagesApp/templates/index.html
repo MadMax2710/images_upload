@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Upload</title>
+</head>
+<body>
+    <h1>Image Uploader</h1>
+    <form action="." method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        {{form.as_p}}
+        
+        <button type="submit" class="btn_upload">Upload</button>
+    </form>
+    <!-- Виведе блок чи успішно завантажено -->
+    {% if obj %}
+    <h2>Uploaded {{img.obj.caption}}</h2>
+    {% else %}
+    <h2>Error</h2>
+    {% endif %}
+    <!-- Перехід на сторіку з усіма картинками -->
+    <a href="preview.html">Look previews</a>
+</body>
+</html>

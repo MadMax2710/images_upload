@@ -15,3 +15,5 @@ def index(request):
         form=ImageForm()
         img=Image.objects.all()
     return render(request,"index.html",{"img":img,"form":form})
+def preview(request):
+    return render(request,"preview.html" )
